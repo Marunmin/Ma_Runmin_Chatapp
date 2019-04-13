@@ -1,0 +1,157 @@
+body {
+    display: flex;
+    align-items: center;
+    min-height: 100px;
+    background: #27ae60;
+    font-family: "proxima-nova", "Source Sans Pro", sans-serif;
+    font-size: 1em;
+    letter-spacing: 0.1px;
+    color: #32465a;
+    text-rendering: optimizeLegibility;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+    -webkit-font-smoothing: antialiased;
+    justify-content: center;
+    position: center;
+}
+
+#app{
+  width: 95%;
+  min-width: 360px;
+  max-width: 1000px;
+  height: 92vh;
+  min-height: 300px;
+  max-height: 720px;
+  background: #E6EAEA;
+}
+
+#app #frame {
+    float: left;
+    min-width: 280px;
+    max-width: 340px;
+    width: 40%;
+    height: 100%;
+    background: #2c3e50;
+    color: #f5f5f5;
+    overflow: hidden;
+    position: relative;
+  }
+
+  #app #frame #profole {
+    width: 80%;
+    margin: 25px auto;
+  }
+
+  .wrap {
+    height: 60px;
+    line-height: 60px;
+    overflow: hidden;
+    -moz-transition: 0.3s height ease;
+    -o-transition: 0.3s height ease;
+    -webkit-transition: 0.3s height ease;
+    transition: 0.3s height ease;
+  }
+
+  img {
+    width: 50px;
+    border-radius: 50%;
+    padding: 3px;
+    height: auto;
+    float: left;
+    cursor: pointer;
+    -moz-transition: 0.3s border ease;
+    -o-transition: 0.3s border ease;
+    -webkit-transition: 0.3s border ease;
+    transition: 0.3s border ease;
+  }
+
+  #app #frame #search {
+    border-top: 1px solid #32465a;
+    border-bottom: 1px solid #32465a;
+    font-weight: 300;
+  }
+
+  #app #frame #search label {
+    position: absolute;
+    margin: 10px 0 0 20px;
+  }
+
+  #app #frame #search input {
+    font-family: "proxima-nova",  "Source Sans Pro", sans-serif;
+    padding: 10px 0 10px 46px;
+    width: 300px;
+    border: none;
+    background: #32465a;
+    color: #f5f5f5;
+  }
+
+  #app #frame #con {
+    height: calc(100% - 177px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+ 
+
+  #app #frame #con ul li .contact {
+    position: relative;
+    padding: 10px 0 15px 0;
+    font-size: 0.9em;
+    cursor: pointer;
+  }
+  
+  #app .content {
+    float: right;
+    width: 60%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  #app .content .contact-porfilo img {
+    width: 40px;
+    border-radius: 50%;
+    float: left;
+    margin: 9px 12px 0 9px;
+  }
+
+  #app .content .message-input {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 99;
+  }
+
+textarea[type=text]{
+    width: 100%;
+    border: 2px solid #aaa;
+    border-radius:4px;
+    margin:8px 0;
+    outline:none;
+    padding:8px;
+    box-sizing:border-box;
+    transition: 0.3s;
+}
+
+textarea[type=text]:focus{
+    border-color:dodgerBlue;
+    box-shadow:0 0 8px 0 dodgerBlue;
+}
+
+hr{
+    margin-top:50px;
+}
+
+input[type=submit] { 
+    width: auto; 
+    padding: 10px; 
+    background-color: rgb(75, 200, 17);
+    margin-top: 1rem; 
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+// imports
+
+@import 'modules/_message';

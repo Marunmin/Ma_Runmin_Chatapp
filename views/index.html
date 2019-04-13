@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Socket IO Chat with Node!</title>
+	<link rel="stylesheet" href="css/main.css">
+	<script src="https://unpkg.com/vue"></script> 
+</head>
+<body>
+	<div class="container" id="app">
+		<div class="mainheader" id="frame">
+		  <div class="headcontent" id="profole">
+            <div class="wrap">
+			   <img id="myself" src="http://localhost:3000/images/Ma.png" class="pro" alt="MaRunmin">
+			   <p>MaRunmin</p>
+		  </div>
+	    </div>
+	  
+	  
+	  <div id="search">
+		  <label for=""><i class="fa fa-search" aria-hidden="ture"></i></label>
+		  <input type="text" placeholder="Search contacts...">
+	  </div>
+
+	  <div class="contact" id="con">
+		  <ul>
+			  <li class="contacts">
+				  <div class="wrap">
+					  <span class="contact-status"></span>
+					  <img src="../images/Brown.png" alt="EmiBrown">
+					  <div class="meta">
+						  <p class="name">EmiBrown</p>
+					  </div>
+				  </div>
+			  </li>
+			  
+			  <li class="contactactive">
+				  <div class="wrap">
+					  <span class="contact-status"></span>
+					  <img src="../images/Lin.png" alt="Lin">
+					  <div class="meta">
+						  <p class="name">Lin</p>
+					  </div>
+				  </div>
+			  </li>
+
+			  <li class="contacts">
+				  <div class="wrap">
+					  <span class="contact-status"></span>
+					  <img src="../images/Mia.png" alt="Mia">
+					  <div class="meta">
+						  <p class="name">Mia</p>
+					  </div>
+				  </div>
+			  </li>
+
+			  <li class="contacts">
+					<div class="wrap">
+						<span class="contact-status"></span>
+						<img src="../images/Guo.png" alt="Guotianjia">
+						<div class="meta">
+							<p class="name">Guo tian jia</p>
+						</div>
+					</div>
+			  </li>
+
+			  <li class="contacts">
+					<div class="wrap">
+						<span class="contact-status"></span>
+						<img src="../images/Jia.png" alt="Jia qi">
+						<div class="meta">
+							<p class="name">Qi jia</p>
+						</div>
+					</div>
+			  </li>
+
+			  <li class="contacts">
+					<div class="wrap">
+						<span class="contact-status"></span>
+						<img src="../images/Wang.png" alt="Wangbo">
+						<div class="meta">
+							<p class="name">Wang Bo</p>
+						</div>
+					</div>
+			  </li>
+
+			  <li class="contacts">
+					<div class="wrap">
+						<span class="contact-status"></span>
+						<img src="../images/Yao.png" alt="YaoDanLing">
+						<div class="meta">
+							<p class="name">Yao Dan Ling</p>
+						</div>
+					</div>
+			  </li>
+
+			  <li class="contacts">
+					<div class="wrap">
+						<span class="contact-status"></span>
+						<img src="../images/Xue.png" alt="ZengXue">
+						<div class="meta">
+							<p class="name">Zeng Xue</p>
+						</div>
+					</div>
+			  </li>
+
+			  <li class="contacts">
+					<div class="wrap">
+						<span class="contact-status"></span>
+						<img src="../images/Keven.png" alt="Keven">
+						<div class="meta">
+							<p class="name">Keven</p>
+						</div>
+					</div>
+			  </li>
+
+			  <li class="contacts">
+					<div class="wrap">
+						<span class="contact-status"></span>
+						<img src="../images/Yu.png" alt="Yuchang">
+						<div class="meta">
+							<p class="name">Yu Chang</p>
+						</div>
+					</div>
+			  </li>
+
+			  <li class="contacts">
+					<div class="wrap">
+						<span class="contact-status"></span>
+						<img src="../images/Kong.png" alt="Kongjie">
+						<div class="meta">
+							<p class="name">Kong Jie</p>
+						</div>
+					</div>
+			  </li>
+
+		  </ul>
+	  </div>
+	</div>
+	<div class="content">
+		<div class="content-porfilo">
+			<img src="../images/Ma.png" alt="MaRunmin">
+			<p>Ma Run Min</p>
+			<div class="social-media">
+				<i class="facebook" hidden="true"></i>
+				<i class="twitter" hidden="true"></i>
+				<i class="instagram" hidden="true"></i>
+			</div>
+		</div>
+		<hr></hr>
+		<div class="message-input" id="messagecontent">
+			<div class="wrapper">
+					<form>
+							<label for="message">Something to say?</label>
+							<textarea v-model="message" class="message" type="text" autocomplete="off" id="textarea"></textarea>
+							<input type="submit" @click.prevent="dispatchMessage">
+				   </form>
+
+				   <section class="messages">
+						<ul id="messages" v-for="message in messages">
+							<!-- render the message component here -->
+							<newmessage :msg="message"></newmessage>				
+						</ul>
+					</section>	
+			</div>
+				
+		</div>
+	</div>
+    
+ </div>
+	<script src="/socket.io/socket.io.js"></script>
+	<script type="module" src="js/main_vm.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
